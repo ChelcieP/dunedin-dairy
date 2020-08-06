@@ -1,0 +1,151 @@
+div.container{
+    background-color: white;
+    border-bottom: #CEE5F2;
+    height: 130px;
+    margin-top: -65px;
+  }
+h3.title{
+    color:#637081;
+    font-size: 40px;
+}
+div.top-title{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+div.image{
+    display: inline-block;
+    padding-left: 70px;
+    padding-top:60px;
+    height: 60px;
+    width: 70px;
+}
+img.icon{
+    padding-top: 7px;
+    max-width: 100%;
+    max-height:100%;
+}
+div.navigation{
+    padding-left: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 45px;
+    max-height: 100%;
+ 
+}
+button{
+    padding-left: 50px;
+    color: #637081;
+    padding-right: 50px;
+    font-size: 18px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    height: 59px;
+    
+}
+button:hover{
+    background-color: #ACCBE1;
+    border: #ACCBE1;
+    color: white;
+}
+
+.background1{
+    max-width: 100%;
+    height: 632px;
+    position: relative;
+    display: block;
+    border: none;
+}
+.background{
+    height: 632px;
+    position: relative;
+    display: none;
+    border: none;
+}
+body{
+    background-color: #CEE5F2;
+    margin: 0;
+}
+h1.message1{
+    padding-left: 65px;
+    text-align: center;
+    padding-top: 100px;
+    color: #536B78;
+}
+h1.message2{
+    padding-left: 65px;
+    text-align: center;
+    color: #536B78;
+    font-size: 100px;
+}
+h1.message3{
+    padding-left: 65px;
+    text-align: center;
+    padding-top: 20px;
+    color: #536B78;
+}
+hr{
+    text-align: center;
+    width: 600px;
+    height: 2px;
+    background-color:white;
+    border: none;
+}
+img.map{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* This needs a border and the padding is going to be need to changed to positions such as left and right*/
+.map-container{
+    width: 500px;
+    height: 500px;
+    /* padding-left: 800px;
+    padding-top: 30px; */
+    border-color: #536B78;
+    border-width: 2px;
+}
+.section-title{
+    text-align: center;
+    padding-top: 20px;
+    color: #536B78;
+    font-size: 70px;
+}
+.active{
+    background-color:#CEE5F2;
+    border-color: none;
+}
+
+/* .floatbar {
+    float: left;
+    overflow: hidden;
+} */
+.product-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.singleProduct{
+    background-color: white;
+} 
+.product-container{
+    box-sizing: border-box;
+  }
+
+.column{
+    width: 25%;
+    float: left;
+    padding-top: 0;
+    padding-right: 10px;
+}
+
+/* Responsive columns change this is the bottom margin even needed*/
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

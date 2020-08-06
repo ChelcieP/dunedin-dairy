@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Dunedin Dairy</title>
+        <link rel="stylesheet" href = "cpra417.css"/>
+    </head>
+
+    <body>
+
+        <!-- the top panel-->
+        <div class='container'>
+            <div class='image'>
+                <img class='icon' src="http://redsox.uoa.auckland.ac.nz/ds/logo-192x192.png">
+            </div>
+            <div class='top-title'>
+                <h3 class='title'>Dunedin Dairy</h3>
+            </div>
+            <div class='navigation'>
+                <nav>
+                    <button class='sectionButton active' onclick='openSection(event,"home")'>Home</button>
+                    <button class='sectionButton' onclick='openSection(event,"products"); productAPI()'>Products</button>
+                    <button class='sectionButton' onclick='openSection(event,"location")'>Location</button>
+                    <button class='sectionButton' onclick='openSection(event,"news")'>News</button>
+                    <button class='sectionButton' onclick='openSection(event,"guestbook")'>Guestbook</button>
+                </nav> 
+            </div>
+        </div>
+
+        <!--home page-->
+        <div id="home"class="background1">
+            <h1 class="message1">Welcome to the </h1>
+            <hr>
+            <h1 class="message2">Dunedin Dairy</h1>
+            <hr>
+            <h1 class="message3">Online Store</h1>
+        </div>
+        <!--products page-->
+        <div id="products" class="background">
+            <h1 class="section-title">Products</h1>
+            <div id='allProducts' class='product-container'>
+                <!-- <div class='row'> -->
+                    <!-- <div class ='column'>
+                        <div class='singleProduct'>
+                            <img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id=248309242'>
+                            <div>
+                                <p>Fromage frais battu 7.8%MG 5 kg</p>
+                                <p>Type: Cheese</p>
+                                <p>Origin: France</p>
+                                <p>$99.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='column'>
+                        <div class='singleProduct'>
+                                <img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id=248309242'>
+                                <div>
+                                    <p>Fromage frais battu 7.8%MG 5 kg</p>
+                                    <p>Type: Cheese</p>
+                                    <p>Origin: France</p>
+                                    <p>$99.99</p>
+                                </div>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!--Location page-->
+        <div id="location" class="background">
+            <h1 class='section-title '>Location</h1>
+            <div class="map-container">
+                <img class='map' src="http://redsox.uoa.auckland.ac.nz/ds/map.png">
+            </div>
+        </div>
+
+        <!--news page-->
+        <div id="news" class="background">
+            <p>nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+        </div>
+
+        <!--guestbook-->
+        <div id="guestbook"class="background">
+            <p>gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</p>
+            
+        </div>
+        <script src="cpra417.js"></script>
+    </body>
+</html>
