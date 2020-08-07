@@ -89,9 +89,20 @@
 
         <!--guestbook-->
         <div id="guestbook"class="background">
-            <p>gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</p>
+            <form onclick='guestBook()' onsubmit="return false">
+                <label>Your Name</label>
+                <input id="guestName" type="text" placeholder="Type Your Name">
+                <label>Comments:</label>
+                <input id="guestComment" type="text" placeholder="Type Your Message">
+                <input type="submit" value="Post your message">
+            </form>
+            <iframe src="http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/htmlcomments">
+
+            </iframe>
             
         </div>
+        
+
         <script src="cpra417.js"></script>
     </body>
 </html>
