@@ -50,6 +50,20 @@ function insertProducts(products){
     document.getElementById("allProducts").innerHTML = htmlcode;
 }
 
+function searchProductAPI(){
+    const productSearch = document.getElementById("searchBar").value;
+    const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/search?term='+productSearch,
+    {
+        headers:{
+            "Accept" : "application/json",
+        },
+    });
+
+    const streamPromise = fetchPromise.then((response) => response.json());
+    streamPromise.then((data)=> insertProducts(data));
+
+}
+
 //news page-----------------------------------------------------------------------------------------------------------
 function newsAPI(){
     const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/news',
