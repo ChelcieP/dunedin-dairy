@@ -21,7 +21,7 @@
                     <button class='sectionButton active' onclick='openSection(event,"home")'>Home</button>
                     <button class='sectionButton' onclick='openSection(event,"products"); productAPI()'>Products</button>
                     <button class='sectionButton' onclick='openSection(event,"location")'>Location</button>
-                    <button class='sectionButton' onclick='openSection(event,"news")'>News</button>
+                    <button class='sectionButton' onclick='openSection(event,"news"); newsAPI()'>News</button>
                     <button class='sectionButton' onclick='openSection(event,"guestbook")'>Guestbook</button>
                 </nav> 
             </div>
@@ -39,6 +39,7 @@
         <div id="products" class="background">
             <h1 class="section-title">Products</h1>
             <div id='allProducts' class='product-container'>
+                <!--hardcode to get the formatting for objects-->
                 <!-- <div class='row'> -->
                     <!-- <div class ='column'>
                         <div class='singleProduct'>
@@ -76,7 +77,14 @@
 
         <!--news page-->
         <div id="news" class="background">
-            <p>nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+            <!--hardcode to get the css for the news-->
+            <div id="allNews">
+                <!-- <div class='oneNews'>
+                    <a href='https://www.francebleu.fr/vie-quotidienne/balades-randonnees/velo-et-fromages-des-itineraires-gourmands-desormais-disponibles-dans-un-guide-1594893284'>Cheese Might Start Becoming More Expensive Than Ever Before Because Of The Food Supply Chain</a>
+                    <p>Tue, 23 Jun 2020 05:31:16 +1300</p>
+                    <img src='https://cdn.radiofrance.fr/s3/cruiser-production/2020/07/bfc6e163-c56f-4a82-ab75-efe4138482ac/860_1ere-couv-pf-fromages-velo-vf.webp'>
+                </div> -->
+            </div>
         </div>
 
         <!--guestbook-->

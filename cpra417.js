@@ -13,6 +13,7 @@ activeSection[0].className = activeSection[0].className.replace("active","");
 event.currentTarget.className += " active";
 }
 
+// products page ------------------------------------------------------------------------------------
 function productAPI(){
     const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/items',
     {
@@ -23,7 +24,7 @@ function productAPI(){
 
     const streamPromise = fetchPromise.then((response) => response.json());
     streamPromise.then((data)=> insertProducts(data));
-    console.log(streamPromise);
+    // console.log(streamPromise);
 
 }
 
@@ -47,4 +48,33 @@ function insertProducts(products){
     }
     products.forEach(addproduct);
     document.getElementById("allProducts").innerHTML = htmlcode;
+}
+
+//news page-----------------------------------------------------------------------------------------------------------
+function newsAPI(){
+    const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/news',
+    {
+        headers:{
+            "Accept" : "application/json",
+        },
+    });
+
+    const streamPromise = fetchPromise.then((response) => response.json());
+    streamPromise.then((data)=> insertNews(data));
+    console.log(streamPromise);
+
+}
+function insertNews(news){
+    let htmlcode = "";
+    const addnews = (news) => {
+        htmlcode += "<div class='oneNews'>"
+        htmlcode += "<a href='"+news.linkField+"'>"+news.titleField+"</a>";
+        htmlcode += "<p>"+news.pubDateField+"</p>";
+        //added the description field this was not in the test code
+        htmlcode += "<p>"+news.descriptionField+"</p>";
+        htmlcode += "<img src='"+news.enclosureField.urlField+"'>";
+        htmlcode += "</div>";
+    }
+    news.forEach(addnews);
+    document.getElementById("allNews").innerHTML = htmlcode;
 }
