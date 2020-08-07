@@ -65,13 +65,13 @@ button:hover{
     position: relative;
     display: none;
     border: none;
-    text-align: center;
 }
 .background2{
     height: 632px;
     position: relative;
     display: none;
     border: none;
+    text-align: center;
 }
 body{
     background-color: #CEE5F2;
@@ -127,10 +127,7 @@ img.map{
     border-color: none;
 }
 
-/* .floatbar {
-    float: left;
-    overflow: hidden;
-} */
+/* Product section ------------------------------ */
 .product-img{
    width: 200px;
    height: 200px;
@@ -141,26 +138,40 @@ img.map{
 .singleProduct{
     background-color: white;
 } 
-.product-container{
+/* .product-container{
     box-sizing: border-box;
-  }
+    width: 70%;
+    margin: 0 auto;
+  } */
+.product-container{
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+    text-align: start;
+}
 
-.column{
+/* .column{
     width: 300px;
     float: left;
-    /* padding-top: 0;
-    padding-right: 10px; */
     padding: 10px;
+} */
+
+.column{
+    display: table-cell;
+    float: left;
+    margin: 10px;
+    width: 25%;
+    
 }
 
 /* Responsive columns change this is the bottom margin even needed*/
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .column {
       width: 300px;
       display: block;
       margin-bottom: 20px;
     }
-  }
+  } */
 .price{
     font-size: 40px;
     color: #536B78;
@@ -177,9 +188,15 @@ img.map{
     margin-bottom: 20px;
     border-color: #ACCBE1;
 }
+.search-container{
+    width: 100%;
+    text-align: center;
+}
 .details{
     display:inline-block;
-    color: #637081
+    color: #637081;
+    text-align: left;
+    margin-left: 5px;
 }
 .price-container{
     display:inline-block;
@@ -212,4 +229,47 @@ img.map{
     color: #536B78;
     font-size: 20px;
     text-align: center;
+}
+/* guestbook section ----------------------------------------------- */
+.guestbook-container{
+    width: 50%;
+    height: 45%;
+    margin-left: 25%;
+}
+.comments{
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    background-color: #ACCBE1;
+}
+.guestName{
+    width: 100%;
+    height: 30px;
+    background-color: #ACCBE1;
+    border-color: white;
+    margin: 10px;
+    outline: none;
+}
+.nameLabel{
+    text-align: left;
+    color: #637081;
+    font-weight: bold;
+}
+.guestComment{
+    height: 100px;
+    width: 100%;
+    background-color: #ACCBE1;
+    border-color: white;
+    margin: 10px;
+    outline: none;
+}
+.submit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: #637081;
+    color: white;
+    border: none;
+    float: right;
+    width: 200px;
 }
