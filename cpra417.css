@@ -44,6 +44,7 @@ button{
     cursor: pointer;
     text-align: center;
     height: 59px;
+    outline: none;
     
 }
 button:hover{
