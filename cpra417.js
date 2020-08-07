@@ -89,4 +89,8 @@ function guestBook(){
         {headers : {"Content-Type": "application/json",},
         method :"POST",
         body : JSON.stringify(guestComment)});
+    
+}
+function refreshThePage(){
+    document.getElementById("comments").src = document.getElementById("comments").src;
 }
