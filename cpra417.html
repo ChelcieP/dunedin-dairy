@@ -36,9 +36,11 @@
             <h1 class="message3">Online Store</h1>
         </div>
         <!--products page-->
-        <div id="products" class="background">
+        <div id="products" class="background2">
             <h1 class="section-title">Products</h1>
-            <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="Search for products">
+            <div class='search-container'>
+                <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="Search for products">
+            </div>
             <div id='allProducts' class='product-container'>
 
                 <!--hardcode to get the formatting for objects-->
@@ -78,7 +80,7 @@
         </div>
 
         <!--news page-->
-        <div id="news" class="background2">
+        <div id="news" class="background">
             <!--hardcode to get the css for the news-->
             <h1 class='section-title'>News</h1>
             <div id="allNews">
@@ -92,16 +94,29 @@
 
         <!--guestbook-->
         <div id="guestbook"class="background">
-            <form onclick='guestBook(); refreshThePage()' onsubmit="return false">
-                <label>Your Name</label>
-                <input id="guestName" type="text" placeholder="Type Your Name">
-                <label>Comments:</label>
-                <input id="guestComment" type="text" placeholder="Type Your Message">
-                <input type="submit" value="Post your message">
-            </form>
-            <iframe id="comments" src="http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/htmlcomments">
+            <h1 class='section-title'>Leave a Message</h1>
+            <div class='guestbook-container'>
+                <form onsubmit="return false">              
+                    <div>
+                        <label class='nameLabel'>Name:</label>
+                    </div>
+                    <div>
+                        <input id="guestName" class='guestName' type="text" placeholder="Type Your Name">
+                    </div>
 
-            </iframe>
+
+                    <div>
+                        <label class='nameLabel'>Comment:</label>
+                    </div>
+                    <div>
+                        <input id="guestComment" class='guestComment' type="text" placeholder="Type Your Message">
+                    </div>
+                    <input type="submit" class='submit' value="Post your message" onclick='guestBook(); refreshThePage()'>
+                </form>
+                <iframe id="comments" class='comments' src="http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/htmlcomments">
+
+                </iframe>
+            </div>
             
         </div>
         

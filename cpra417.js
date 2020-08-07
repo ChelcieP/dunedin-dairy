@@ -103,6 +103,7 @@ function insertNews(news){
 
 //guestbook page ---------------------------------------------------------------------------------------------------------------------
 function guestBook(){
+
     const guestName = document.getElementById("guestName").value;
     const guestComment = document.getElementById("guestComment").value;
     const uri = "http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/comment?name=" + guestName;
@@ -112,7 +113,8 @@ function guestBook(){
         method :"POST",
         body : JSON.stringify(guestComment)});
     
-}
+
+    }
 function refreshThePage(){
     document.getElementById("comments").src = document.getElementById("comments").src;
 }
