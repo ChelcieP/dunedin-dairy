@@ -78,3 +78,15 @@ function insertNews(news){
     news.forEach(addnews);
     document.getElementById("allNews").innerHTML = htmlcode;
 }
+
+//guestbook page ---------------------------------------------------------------------------------------------------------------------
+function guestBook(){
+    const guestName = document.getElementById("guestName").value;
+    const guestComment = document.getElementById("guestComment").value;
+    const uri = "http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/comment?name=" + guestName;
+
+    const fetchPromise= fetch(uri,
+        {headers : {"Content-Type": "application/json",},
+        method :"POST",
+        body : JSON.stringify(guestComment)});
+}
