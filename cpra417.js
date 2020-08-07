@@ -35,12 +35,18 @@ function insertProducts(products){
         htmlcode += "<div class='row'>";
         htmlcode += "<div class ='column'>";
         htmlcode += "<div class='singleProduct'>";
+        htmlcode +="<div class='pMiddle'>";       
         htmlcode += "<img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id="+product.ItemId+"'>";
+        htmlcode += "</div>";        
         htmlcode +="<div>";
-        htmlcode += "<p>"+product.Title+"</p>";
-        htmlcode += "<p>"+product.Type+"</p>";
-        htmlcode += "<p>"+product.Origin+"</p>";
-        htmlcode += "<p>"+product.Price+"</p>";
+        htmlcode += "<p class='pTitle'>"+product.Title+"</p>";
+        htmlcode +="<div class='details'>";        
+        htmlcode += "<p>Type: "+product.Type+"</p>";
+        htmlcode += "<p>Origin: "+product.Origin+"</p>";
+        htmlcode += "</div>";
+        htmlcode +="<div class='price-container'>";               
+        htmlcode += "<p class='price'>$"+product.Price+"</p>";
+        htmlcode += "</div>";
         htmlcode += "</div>";
         htmlcode += "</div>";
         htmlcode += "</div>";
@@ -82,11 +88,13 @@ function insertNews(news){
     let htmlcode = "";
     const addnews = (news) => {
         htmlcode += "<div class='oneNews'>"
-        htmlcode += "<a href='"+news.linkField+"'>"+news.titleField+"</a>";
-        htmlcode += "<p>"+news.pubDateField+"</p>";
-        //added the description field this was not in the test code
-        htmlcode += "<p>"+news.descriptionField+"</p>";
-        htmlcode += "<img src='"+news.enclosureField.urlField+"'>";
+
+        htmlcode += "<a href='"+news.linkField+"' class='article-title'>"+news.titleField+"</a>";
+        htmlcode += "<p class='newsDate'>"+news.pubDateField+"</p>";
+        htmlcode += "<p class='newsWords'>"+news.descriptionField+"</p>";
+
+        htmlcode += "<img class='newsImg' src='"+news.enclosureField.urlField+"'>";
+
         htmlcode += "</div>";
     }
     news.forEach(addnews);
