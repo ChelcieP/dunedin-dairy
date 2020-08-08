@@ -1,9 +1,10 @@
 div.container{
     background-color: white;
     border-bottom: #CEE5F2;
-    height: 130px;
-    margin-top: -65px;
+    height: 1%;
     width:100%;
+    overflow: auto;
+    margin: 0;
   }
 h3.title{
     color:#637081;
@@ -13,17 +14,17 @@ div.top-title{
     display: inline-block;
     vertical-align: middle;
     padding-left: 20px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 div.image{
     display: inline-block;
     padding-left: 70px;
-    padding-top:60px;
+    /* padding-top:60px; */
     height: 60px;
     width: 70px;
+    vertical-align: middle;
 }
 img.icon{
-    padding-top: 7px;
     max-width: 100%;
     max-height:100%;
 }
@@ -31,28 +32,37 @@ div.navigation{
     padding-left: 90px;
     display: inline-block;
     vertical-align: middle;
-    padding-bottom: 45px;
+    /* padding-bottom: 45px; */
     max-height: 100%;
+    overflow: visible;
+    height:100%;
+    width: 900px;
  
 }
+
 button{
-    padding-left: 50px;
+    /* padding-left: 50px; */
     color: #637081;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     font-size: 18px;
     border: none;
     background-color: white;
     cursor: pointer;
     text-align: center;
-    height: 59px;
+    height: 130px;
     outline: none;
     margin: 0;
+    width: 15%;
     
 }
 button:hover{
     background-color: #ACCBE1;
     border: #ACCBE1;
     color: white;
+}
+.active{
+    background-color:#CEE5F2;
+    border-color: none;
 }
 
 .background1{
@@ -64,7 +74,7 @@ button:hover{
 }
 .background{
     height: 632px;
-    position: relative;
+    /* position: relative; */
     display: none;
     border: none;
 }
@@ -118,10 +128,7 @@ img.map{
     color: #536B78;
     font-size: 70px;
 }
-.active{
-    background-color:#CEE5F2;
-    border-color: none;
-}
+
 
 /* Product section ------------------------------ */
 .product-img{
@@ -137,6 +144,10 @@ img.map{
     border-radius: 5px;
     box-shadow: 8px 8px 5px #ACCBE1;
 } 
+
+.singleProduct:hover{
+    background-color: #ACCBE1;
+}
 /* .product-container{
     box-sizing: border-box;
     width: 70%;
@@ -153,7 +164,10 @@ img.map{
 .column{
     display: table-cell;
     float: left;
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 0;
     width: 300px;
 }
 .row{
@@ -187,7 +201,7 @@ img.map{
     margin-left: 20px;
     margin-bottom: 20px;
     border-color: #ACCBE1;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
 }
 .search-container{
     width: 100%;
