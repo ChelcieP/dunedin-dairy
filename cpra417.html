@@ -36,7 +36,7 @@
             <h1 class="message3">Online Store</h1>
         </div>
         <!--products page-->
-        <div id="products" class="background2">
+        <div id="products" class="background">
             <h1 class="section-title">Products</h1>
             <div class='search-container'>
                 <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="Search for products">
@@ -96,7 +96,7 @@
         <div id="guestbook"class="background">
             <h1 class='section-title'>Leave a Message</h1>
             <div class='guestbook-container'>
-                <form onsubmit="return false">              
+                <form onclick ='refreshThePage()'onsubmit="return false">              
                     <div>
                         <label class='nameLabel'>Name:</label>
                     </div>
