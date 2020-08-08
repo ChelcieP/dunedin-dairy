@@ -32,20 +32,22 @@ function productAPI(){
 function insertProducts(products){
     let htmlcode = "";
     const addproduct = (product) => {
-        htmlcode += "<div class='row'>";
         htmlcode += "<div class ='column'>";
         htmlcode += "<div class='singleProduct'>";
+        htmlcode += "<div class='row'>";
         htmlcode +="<div class='pMiddle'>";       
         htmlcode += "<img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id="+product.ItemId+"'>";
         htmlcode += "</div>";        
         htmlcode +="<div>";
         htmlcode += "<p class='pTitle'>"+product.Title+"</p>";
+        htmlcode +="<div class='pWords'>";
         htmlcode +="<div class='details'>";        
         htmlcode += "<p>Type: "+product.Type+"</p>";
         htmlcode += "<p>Origin: "+product.Origin+"</p>";
         htmlcode += "</div>";
         htmlcode +="<div class='price-container'>";               
         htmlcode += "<p class='price'>$"+product.Price+"</p>";
+        htmlcode += "</div>";
         htmlcode += "</div>";
         htmlcode += "</div>";
         htmlcode += "</div>";
@@ -103,7 +105,6 @@ function insertNews(news){
 
 //guestbook page ---------------------------------------------------------------------------------------------------------------------
 function guestBook(){
-
     const guestName = document.getElementById("guestName").value;
     const guestComment = document.getElementById("guestComment").value;
     const uri = "http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/comment?name=" + guestName;
@@ -113,8 +114,10 @@ function guestBook(){
         method :"POST",
         body : JSON.stringify(guestComment)});
     
-
+    refreshThePage();
+    document.getElementById("comments").src = document.getElementById("comments").src;
     }
+
 function refreshThePage(){
     document.getElementById("comments").src = document.getElementById("comments").src;
 }
