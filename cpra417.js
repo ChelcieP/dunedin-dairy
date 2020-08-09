@@ -169,15 +169,15 @@ function insertLocation(details){
 
     let htmlcode = "";
         htmlcode += "<tr>";
-        htmlcode += "<th class='header'>Phone:</th>";
+        htmlcode += "<th class='header'>📞 Phone:</th>";
         htmlcode += "<th><a href='Tel:"+phone+"'>"+phone+"</a></th>";
         htmlcode += "</tr>";
         htmlcode += "<tr>";
-        htmlcode += "<th class='header'>Address:</th>";
-        htmlcode += "<th><a href='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard' target='_blank'>"+street+"<br>"+city+"<br>"+country+"</a></th>";
+        htmlcode += "<th class='header'>🏢 Address:</th>";
+        htmlcode += "<th>"+street+"<br>"+city+"<br>"+country+"</th>";
         htmlcode += "</tr>";
         htmlcode += "<tr>";
-        htmlcode += "<th class='header'>Email:</th>";
+        htmlcode += "<th class='header'>📩 Email:</th>";
         htmlcode += "<th><a href='mailto:"+email+"'>"+email+"</a></th>";
         htmlcode += "</tr>";
     document.getElementById("locationDetails").innerHTML = htmlcode;
