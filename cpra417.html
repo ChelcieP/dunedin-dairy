@@ -20,7 +20,7 @@
                 <nav>
                     <button class='sectionButton active' onclick='openSection(event,"home")'>Home</button>
                     <button class='sectionButton' onclick='openSection(event,"products"); productAPI()'>Products</button>
-                    <button class='sectionButton' onclick='openSection(event,"location")'>Location</button>
+                    <button class='sectionButton' onclick='openSection(event,"location"); locationAPI()'>Location</button>
                     <button class='sectionButton' onclick='openSection(event,"news"); newsAPI()'>News</button>
                     <button class='sectionButton' onclick='openSection(event,"guestbook")'>Guestbook</button>
                 </nav> 
@@ -74,8 +74,26 @@
         <!--Location page-->
         <div id="location" class="background">
             <h1 class='section-title '>Location</h1>
-            <div class="map-container">
-                <img class='map' src="http://redsox.uoa.auckland.ac.nz/ds/map.png">
+            <div class='location-container'>
+                <div class="map-container">
+                    <img class='map' src="http://redsox.uoa.auckland.ac.nz/ds/map.png">
+                </div>
+                <table>
+                    <tr>
+                        <th class='header'>Phone:</th>
+                        <th>678 999 8212</th>
+                    </tr>
+                    <tr >
+                        <th class='header'>Address:</th>
+                        <th>42 wallway st<br>Sydney<br>Australia</th>
+                    </tr>
+                    <tr>
+                        <th class='header'>Email:</th>
+                        <th>the_cooliest@gmail.com</th>
+                    </tr>
+                </table>
+
+
             </div>
         </div>
 
