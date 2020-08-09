@@ -121,3 +121,30 @@ function guestBook(){
 function refreshThePage(){
     document.getElementById("comments").src = document.getElementById("comments").src;
 }
+
+//location page ---------------------------------------------------------------------------------------------------------------------------------
+function locationAPI(){
+    const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard',
+    {
+        headers:{
+            "Accept" : "application/text",
+        },
+    });
+
+    const streamPromise = fetchPromise.then((response) => response.text());
+    streamPromise.then((data)=> insertLocation(data));
+    console.log(streamPromise);
+}
+
+function insertLocation(details){
+    const line = details.split("\n");
+    const phone = (line[3].split(":"))[1];
+    const address = (line[4].split(":"))[1];
+    const street = (address.split(";"))[2];
+    const city = (address.split(";"))[3];
+    const country = (address.split(";"))[4];
+    const email = (line[5].split(":"))[1];
+    // alert(email);
+    // alert(line);
+
+}
