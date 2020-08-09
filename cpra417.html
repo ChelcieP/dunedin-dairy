@@ -4,6 +4,7 @@
     <head>
         <title>Dunedin Dairy</title>
         <link rel="stylesheet" href = "cpra417.css"/>
+        <link rel='icon' href=' http://redsox.uoa.auckland.ac.nz/ds/logo-192x192.png'>
     </head>
 
     <body>
@@ -18,11 +19,11 @@
             </div>
             <div class='navigation'>
                 <nav>
-                    <button class='sectionButton active' onclick='openSection(event,"home")'>Home</button>
-                    <button class='sectionButton' onclick='openSection(event,"products"); productAPI()'>Products</button>
-                    <button class='sectionButton' onclick='openSection(event,"location"); locationAPI()'>Location</button>
-                    <button class='sectionButton' onclick='openSection(event,"news"); newsAPI()'>News</button>
-                    <button class='sectionButton' onclick='openSection(event,"guestbook")'>Guestbook</button>
+                    <button class='sectionButton active' onclick='openSection(event,"home")'>🏠 Home</button>
+                    <button class='sectionButton' onclick='openSection(event,"products"); productAPI()'>🛒 Products</button>
+                    <button class='sectionButton' onclick='openSection(event,"location"); locationAPI()'>📌 Location</button>
+                    <button class='sectionButton' onclick='openSection(event,"news"); newsAPI()'>📰 News</button>
+                    <button class='sectionButton' onclick='openSection(event,"guestbook")'>📖 Guestbook</button>
                 </nav> 
             </div>
         </div>
@@ -39,7 +40,7 @@
         <div id="products" class="background">
             <h1 class="section-title">Products</h1>
             <div class='search-container'>
-                <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="Search for products">
+                <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="🔍 Search for products">
             </div>
             <div id='allProducts' class='product-container'>
                 <!-- the product info gets put in here -->
@@ -54,9 +55,11 @@
                     <img class='map' src="http://redsox.uoa.auckland.ac.nz/ds/map.png">
                 </div>
 
-                    <table id='locationDetails'>
-                        <!-- The location info gets put in here -->
-                    </table>
+                <table id='locationDetails'>
+                    <!-- The location info gets put in here -->
+                </table>
+
+                <p class='addressbook'><a href = 'http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard'> ↓ Save to Address Book</a></p>
 
             </div>
         </div>
