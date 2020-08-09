@@ -107,7 +107,7 @@ function guestBook(){
     const uri = "http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/comment?name=" + guestName;
 
     const fetchPromise= fetch(uri,
-        {headers : {"Content-Type": "application/json",},
+        {headers : {"Content-Type": "application/json"},
         method :"POST",
         body : JSON.stringify(guestComment)});
     
@@ -121,13 +121,7 @@ function refreshThePage(){
 
 //location page ---------------------------------------------------------------------------------------------------------------------------------
 function locationAPI(){
-    const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard',
-    {
-        headers:{
-            "Accept" : "application/text",
-        },
-    });
-
+    const fetchPromise= fetch('http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard');
     const streamPromise = fetchPromise.then((response) => response.text());
     streamPromise.then((data)=> insertLocation(data));
 }
@@ -162,7 +156,7 @@ function insertLocation(details){
             address = (colonSplit[1]).split(";");
             street = address[address.length - 3];
             city = address[address.length - 2];
-            country = address[address.length - 1]
+            country = address[address.length - 1];
         }
         
     }
