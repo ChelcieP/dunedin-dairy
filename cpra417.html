@@ -42,32 +42,7 @@
                 <input id="searchBar" class='searchbar' type="text" onkeyup="searchProductAPI()" placeholder="Search for products">
             </div>
             <div id='allProducts' class='product-container'>
-
-                <!--hardcode to get the formatting for objects-->
-                <!-- <div class='row'> -->
-                    <!-- <div class ='column'>
-                        <div class='singleProduct'>
-                            <img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id=248309242'>
-                            <div>
-                                <p>Fromage frais battu 7.8%MG 5 kg</p>
-                                <p>Type: Cheese</p>
-                                <p>Origin: France</p>
-                                <p>$99.99</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='column'>
-                        <div class='singleProduct'>
-                                <img class='product-img' src='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/itemimg?id=248309242'>
-                                <div>
-                                    <p>Fromage frais battu 7.8%MG 5 kg</p>
-                                    <p>Type: Cheese</p>
-                                    <p>Origin: France</p>
-                                    <p>$99.99</p>
-                                </div>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
+                <!-- the product info gets put in here -->
             </div>
         </div>
 
@@ -78,35 +53,19 @@
                 <div class="map-container">
                     <img class='map' src="http://redsox.uoa.auckland.ac.nz/ds/map.png">
                 </div>
-                <table>
-                    <tr>
-                        <th class='header'>Phone:</th>
-                        <th>678 999 8212</th>
-                    </tr>
-                    <tr >
-                        <th class='header'>Address:</th>
-                        <th>42 wallway st<br>Sydney<br>Australia</th>
-                    </tr>
-                    <tr>
-                        <th class='header'>Email:</th>
-                        <th>the_cooliest@gmail.com</th>
-                    </tr>
-                </table>
 
+                    <table id='locationDetails'>
+                        <!-- The location info gets put in here -->
+                    </table>
 
             </div>
         </div>
 
         <!--news page-->
         <div id="news" class="background">
-            <!--hardcode to get the css for the news-->
             <h1 class='section-title'>News</h1>
             <div id="allNews">
-                <!-- <div class='oneNews'>
-                    <a href='https://www.francebleu.fr/vie-quotidienne/balades-randonnees/velo-et-fromages-des-itineraires-gourmands-desormais-disponibles-dans-un-guide-1594893284'>Cheese Might Start Becoming More Expensive Than Ever Before Because Of The Food Supply Chain</a>
-                    <p>Tue, 23 Jun 2020 05:31:16 +1300</p>
-                    <img src='https://cdn.radiofrance.fr/s3/cruiser-production/2020/07/bfc6e163-c56f-4a82-ab75-efe4138482ac/860_1ere-couv-pf-fromages-velo-vf.webp'>
-                </div> -->
+                <!-- the news gets put in here -->
             </div>
         </div>
 
@@ -114,7 +73,7 @@
         <div id="guestbook"class="background">
             <h1 class='section-title'>Leave a Message</h1>
             <div class='guestbook-container'>
-                <form onclick ='refreshThePage()'onsubmit="return false">              
+                <form onsubmit="return false">              
                     <div>
                         <label class='nameLabel'>Name:</label>
                     </div>
@@ -129,7 +88,7 @@
                     <div>
                         <input id="guestComment" class='guestComment' type="text" placeholder="Type Your Message">
                     </div>
-                    <input type="submit" class='submit' value="Post your message" onclick='guestBook(); refreshThePage()'>
+                    <input type="submit" class='submit' value="Post your message" onclick='guestBook()'>
                 </form>
                 <iframe id="comments" class='comments' src="http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/htmlcomments">
 
