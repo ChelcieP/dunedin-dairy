@@ -1,6 +1,6 @@
 function openSection(event, section){
-var allSections = ["home","products","location","guestbook","news"]
-var i;
+const allSections = ["home","products","location","guestbook","news"]
+let i;
 for (i=0;i<allSections.length;i++){
     if(section==allSections[i]){
         document.getElementById(allSections[i]).style.display="block";
@@ -8,7 +8,7 @@ for (i=0;i<allSections.length;i++){
         document.getElementById(allSections[i]).style.display="none";
     }
 }
-var activeSection = document.getElementsByClassName("active");
+const activeSection = document.getElementsByClassName("active");
 activeSection[0].className = activeSection[0].className.replace("active","");
 event.currentTarget.className += " active";
 }
@@ -24,11 +24,9 @@ function productAPI(){
 
     const streamPromise = fetchPromise.then((response) => response.json());
     streamPromise.then((data)=> insertProducts(data));
-    // console.log(streamPromise);
 
 }
 
-//commented out while i hardcode the formatting
 function insertProducts(products){
     let htmlcode = "";
     const addproduct = (product) => {
@@ -83,7 +81,6 @@ function newsAPI(){
 
     const streamPromise = fetchPromise.then((response) => response.json());
     streamPromise.then((data)=> insertNews(data));
-    console.log(streamPromise);
 
 }
 function insertNews(news){
@@ -114,8 +111,8 @@ function guestBook(){
         method :"POST",
         body : JSON.stringify(guestComment)});
     
-    refreshThePage();
-    document.getElementById("comments").src = document.getElementById("comments").src;
+    fetchPromise.then((response)=>refreshThePage());
+
     }
 
 function refreshThePage(){
@@ -133,18 +130,55 @@ function locationAPI(){
 
     const streamPromise = fetchPromise.then((response) => response.text());
     streamPromise.then((data)=> insertLocation(data));
-    console.log(streamPromise);
 }
 
 function insertLocation(details){
     const line = details.split("\n");
-    const phone = (line[3].split(":"))[1];
-    const address = (line[4].split(":"))[1];
-    const street = (address.split(";"))[2];
-    const city = (address.split(";"))[3];
-    const country = (address.split(";"))[4];
-    const email = (line[5].split(":"))[1];
-    // alert(email);
-    // alert(line);
 
+    let phone;
+    let email;
+    let address;
+    let street;
+    let city;
+    let country;
+
+    for(i=0;i<line.length;i++){
+        const colonSplit = line[i].split(":");
+        const initialkey = colonSplit[0];
+        const semicolonIndex = initialkey.indexOf(";");
+        let actualkey = "";
+        if (semicolonIndex > -1){
+            actualkey = (initialkey.split(";")[0]);
+        } else {
+            actualkey = initialkey;
+        }
+        if (actualkey === "TEL"){
+            phone = colonSplit[1];
+        }
+        if(actualkey === "EMAIL"){
+            email = colonSplit[1];
+        }
+        if(actualkey === "ADR"){
+            address = (colonSplit[1]).split(";");
+            street = address[address.length - 3];
+            city = address[address.length - 2];
+            country = address[address.length - 1]
+        }
+        
+    }
+
+    let htmlcode = "";
+        htmlcode += "<tr>";
+        htmlcode += "<th class='header'>Phone:</th>";
+        htmlcode += "<th><a href='Tel:"+phone+"'>"+phone+"</a></th>";
+        htmlcode += "</tr>";
+        htmlcode += "<tr>";
+        htmlcode += "<th class='header'>Address:</th>";
+        htmlcode += "<th><a href='http://redsox.uoa.auckland.ac.nz/ds/DairyService.svc/vcard' target='_blank'>"+street+"<br>"+city+"<br>"+country+"</a></th>";
+        htmlcode += "</tr>";
+        htmlcode += "<tr>";
+        htmlcode += "<th class='header'>Email:</th>";
+        htmlcode += "<th><a href='mailto:"+email+"'>"+email+"</a></th>";
+        htmlcode += "</tr>";
+    document.getElementById("locationDetails").innerHTML = htmlcode;
 }
